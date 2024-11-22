@@ -5,40 +5,16 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
-@Entity
+import java.util.List;
+
 public class Book {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
     private String title;
-    private String author;
-    private String genre;
+    private List<String> authors;
     private String description;
-    private int publicationYear;
-    private double rating;
+    private String publishedDate;
+    private String thumbnail;
 
-
-    public Book() {
-    }
-
-    public Book(String title, String author, String genre, String description, int publicationYear, double rating) {
-        this.title = title;
-        this.author = author;
-        this.genre = genre;
-        this.description = description;
-        this.publicationYear = publicationYear;
-        this.rating = rating;
-    }
-
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
 
     public String getTitle() {
         return title;
@@ -48,20 +24,12 @@ public class Book {
         this.title = title;
     }
 
-    public String getAuthor() {
-        return author;
+    public List<String> getAuthors() {
+        return authors;
     }
 
-    public void setAuthor(String author) {
-        this.author = author;
-    }
-
-    public String getGenre() {
-        return genre;
-    }
-
-    public void setGenre(String genre) {
-        this.genre = genre;
+    public void setAuthors(List<String> authors) {
+        this.authors = authors;
     }
 
     public String getDescription() {
@@ -72,19 +40,19 @@ public class Book {
         this.description = description;
     }
 
-    public int getPublicationYear() {
-        return publicationYear;
+    public String getPublishedDate() {
+        return publishedDate;
     }
 
-    public void setPublicationYear(int publicationYear) {
-        this.publicationYear = publicationYear;
+    public void setPublishedDate(String publishedDate) {
+        this.publishedDate = publishedDate;
     }
 
-    public double getRating() {
-        return rating;
+    public String getThumbnail() {
+        return thumbnail;
     }
 
-    public void setRating(double rating) {
-        this.rating = rating;
+    public void setThumbnail(String thumbnail) {
+        this.thumbnail = thumbnail;
     }
 }
